@@ -1,0 +1,44 @@
+{
+  "name": "gogam",
+  "version": "1.0.0",
+  "description": "go angular mongo stack",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-go": "^1.1.0"
+  },
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-sync": "^0.1.4",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.11",
+    "merge-stream": "^1.0.1",
+    "node-minify": "^2.0.2",
+    "node-notifier": "^4.6.1",
+    "os": "^0.1.1",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nenjotsu/GoGAM.git"
+  },
+  "keywords": [
+    "go",
+    "angular",
+    "mongo"
+  ],
+  "author": "nenjotsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nenjotsu/GoGAM/issues"
+  },
+  "homepage": "https://github.com/nenjotsu/GoGAM#readme"
+}
