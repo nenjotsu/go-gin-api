@@ -1,4 +1,4 @@
-# marcidblue-sales-go-api
+# go-gin-api
 
 GoLang + Gin + MongoDB Stack
 
