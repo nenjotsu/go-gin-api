@@ -19,7 +19,7 @@
     "gulp-watch": "^4.3.11",
     "merge-stream": "^1.0.1",
     "node-minify": "^2.0.2",
-    "node-notifier": "^4.6.1",
+    "node-notifier": ">=8.0.1",
     "os": "^0.1.1",
     "path": "^0.12.7"
   },
