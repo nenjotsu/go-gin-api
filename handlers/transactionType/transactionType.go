@@ -9,7 +9,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 
 	"github.com/gin-gonic/gin"
-	"github.com/marcidblue-sales-api/models"
+	"github.com/sales-api/models"
 )
 
 // Create an transactionType
@@ -56,8 +56,8 @@ func Update(c *gin.Context) {
 
 	query := bson.M{"_id": transactionType.ID}
 	doc := bson.M{
-		"_id":      transactionType.ID,
-		"code":       transactionType.Code,
+		"_id":             transactionType.ID,
+		"code":            transactionType.Code,
 		"transactionType": transactionType.TransactionType,
 	}
 	err = db.C(models.CollectionTransactionType).Update(query, doc)

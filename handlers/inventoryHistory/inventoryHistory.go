@@ -8,7 +8,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 
 	"github.com/gin-gonic/gin"
-	"github.com/marcidblue-sales-api/models"
+	"github.com/sales-api/models"
 )
 
 // Create an inventoryHistory

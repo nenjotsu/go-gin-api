@@ -7,7 +7,7 @@ import (
 	//"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/marcidblue-sales-api/db"
+	"github.com/sales-api/db"
 )
 
 // Connect middleware clones the database session for each request and
