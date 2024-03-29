@@ -21,12 +21,12 @@ import (
 	"github.com/sales-api/handlers/warehouse"
 	"github.com/sales-api/middlewares"
 	"github.com/sales-api/models"
-
-	//"github.com/fvbock/endless" //this is for production
-	"github.com/itsjamie/gin-cors"
-	"gopkg.in/appleboy/gin-jwt.v2"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+
+	//"github.com/fvbock/endless" //this is for production
+	jwt "github.com/appleboy/gin-jwt/v2"
+	cors "github.com/itsjamie/gin-cors"
 )
 
 // Port at which the server starts listening
@@ -70,7 +70,8 @@ func main() {
 		Key:        []byte(hashSecretKey),
 		Timeout:    time.Hour * 12,
 		MaxRefresh: time.Hour * 12,
-		Authenticator: func(username string, password string, c *gin.Context) (string, bool) {
+		Authenticator: func(c *gin.Context) (interface{}, error) {
+			var username, password string
 			db := c.MustGet("db").(*mgo.Database)
 			query := bson.M{
 				"username": username,
@@ -84,12 +85,12 @@ func main() {
 			if err != nil || match != true {
 				fmt.Println(err)
 				c.Error(err)
-				return credentials, false
+				return credentials, err
 			}
 
-			return credentials, true
+			return credentials, nil
 		},
-		Authorizator: func(username string, c *gin.Context) bool {
+		Authorizator: func(data interface{}, c *gin.Context) bool {
 			return true
 		},
 		Unauthorized: func(c *gin.Context, code int, message string) {
